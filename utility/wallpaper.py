@@ -41,7 +41,7 @@ wallpapers = {
     }
 }
 home_path = Path.home()
-default_path = wallpapers['local']['other']['space']
+default_path = wallpapers['local']['unsplash']['default']
 
 
 # Instantiate argument parser
