@@ -1,3 +1,6 @@
 #!/usr/bin/sh
-export DISPLAY=:0
-echo $1 | sudo -S brightnessctl s 200+
+echo $USER_PASS | sudo -S brightnessctl s 1%+
+sleep 0.05
+echo $USER_PASS | sudo -S brightnessctl s 1%+
+sleep 0.05
+echo $USER_PASS | sudo -S brightnessctl s 1%+
