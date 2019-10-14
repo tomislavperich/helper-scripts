@@ -1,4 +1,5 @@
-#!/usr/bin/sh
+#!/usr/bin/bash
+. $HOME/scripts/.env
 echo $USER_PASS | sudo -S brightnessctl s 1%-
 sleep 0.05
 echo $USER_PASS | sudo -S brightnessctl s 1%-
