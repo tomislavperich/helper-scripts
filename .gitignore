@@ -1,3 +1,6 @@
+# Project related
+other
+
 # Environment
 .env*
 !.env*example
