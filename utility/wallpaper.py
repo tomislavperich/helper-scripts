@@ -14,34 +14,34 @@ except ImportError:
 
 # Paths
 wallpapers = {
-    'local': {
-        'unsplash': {
-            'default': 'Pictures/Wallpapers/Unsplash'
+    "local": {
+        "unsplash": {
+            "default": "Pictures/Wallpapers/Unsplash"
         },
-        'wallhaven': {
-            'default': 'Pictures/Wallpapers/Wallhaven-Default',
-            'landscape': 'Pictures/Wallpapers/Wallhaven-Landscapes',
-            'cyber': 'Pictures/Wallpapers/Wallhaven-Cyber',
-            'hot': 'Pictures/Wallpapers/Wallhaven-Hot',
-            'scifi': 'Pictures/Wallpapers/Wallhaven-SciFi', 
-            'misc': 'Pictures/Wallpapers/Wallhaven-Misc',
+        "wallhaven": {
+            "default": "Pictures/Wallpapers/Wallhaven/Default",
+            "landscape": "Pictures/Wallpapers/Wallhaven/Landscapes",
+            "cyber": "Pictures/Wallpapers/Wallhaven/Cyber",
+            "hot": "Pictures/Wallpapers/Wallhaven/Hot",
+            "scifi": "Pictures/Wallpapers/Wallhaven/SciFi", 
+            "misc": "Pictures/Wallpapers/Wallhaven/Misc",
         },
-        'other': {
-            'space': 'Pictures/Wallpapers/Space',
-            'synthwave': 'Pictures/Wallpapers/Synthwave',
-            'red': 'Pictures/Wallpapers/Red',
+        "other": {
+            "space": "Pictures/Wallpapers/Space",
+            "synthwave": "Pictures/Wallpapers/Synthwave",
+            "red": "Pictures/Wallpapers/Red",
         }
     },
-    'remote': {
-        'unsplash': {
-            'default': 'https://source.unsplash.com/1920x1080/?nature',
-            'daily': 'https://source.unsplash.com/daily',
-            'random': 'https://source.unsplash.com/random/1920x1080'
+    "remote": {
+        "unsplash": {
+            "default": "https://source.unsplash.com/1920x1080/?nature",
+            "daily": "https://source.unsplash.com/daily",
+            "random": "https://source.unsplash.com/random/1920x1080"
         }
     }
 }
 home_path = Path.home()
-default_path = wallpapers['local']['unsplash']['default']
+default_path = wallpapers["local"]["unsplash"]["default"]
 
 
 # Instantiate argument parser
