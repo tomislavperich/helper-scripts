@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Set up touchpad tap to click
-# xinput set-prop 13 319 1
+xinput set-prop 13 319 1
 
 # Start libinput-gestures
 . $HOME/scripts/.env
