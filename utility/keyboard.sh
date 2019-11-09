@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# Smaller keypress delay and faster repeat
+xset r rate 220 40
+
 ### Layout
 # Set layout to en,rs(latin),rs(cyrillic), use alt+shift to cycle
 setxkbmap us,rs,rs -variant ,latin, -option grp:alt_shift_toggle
@@ -9,4 +12,4 @@ setxkbmap us,rs,rs -variant ,latin, -option grp:alt_shift_toggle
 setxkbmap -option caps:ctrl_modifier
 
 # Rebind Menu to Super_L
-xmodmap -e keycode 135 = Super_L
+xmodmap -e "keycode 135 = Super_L"
