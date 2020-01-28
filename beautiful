@@ -1,0 +1,38 @@
+diff --git a/.env.example b/.env.example
+deleted file mode 100644
+index ad9118f..0000000
+--- a/.env.example
++++ /dev/null
+@@ -1,2 +0,0 @@
+-# User password for scripts that require superuser privilege
+-USER_PASS=userpassword123
+diff --git a/utility/touchpad.sh b/utility/touchpad.sh
+index 8d47dd7..c26b735 100755
+--- a/utility/touchpad.sh
++++ b/utility/touchpad.sh
+@@ -1,7 +1,11 @@
+ #!/bin/sh
+ 
++touchpad_id=$(xinput list | grep -oE "Synaptics.*id=.." | cut -d "=" -f2)
+ # Set up touchpad tap to click
+-xinput set-prop 13 319 1
++xinput set-prop $touchpad_id 319 1
++
++# No disable while typing
++xinput set-prop $touchpad_id 329 0
+ 
+ # Start libinput-gestures
+ . $HOME/scripts/.env
+diff --git a/utility/wallpaper.py b/utility/wallpaper.py
+index bde1505..41bc03c 100755
+--- a/utility/wallpaper.py
++++ b/utility/wallpaper.py
+@@ -41,7 +41,7 @@ wallpapers = {
+     }
+ }
+ home_path = Path.home()
+-default_path = wallpapers["local"]["wallhaven"]["landscape"]
++default_path = wallpapers["local"]["wallhaven"]["cyber"]
+ 
+ 
+ # Instantiate argument parser
