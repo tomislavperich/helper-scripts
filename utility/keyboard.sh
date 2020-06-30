@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Smaller keypress delay and faster repeat
-xset r rate 220 30
+xset r rate 170 25
 
 ### Layout
 # Set layout to en,rs(latin),rs(cyrillic), use alt+shift to cycle
