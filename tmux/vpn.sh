@@ -11,7 +11,7 @@ vpn_routes_treshold=20
 # Check if tmux session already exists
 session_exists=$(tmux ls 2>&1 | grep $session)
 if [ "$session_exists" != "" ]; then
-    tmux a -t $session
+    # tmux a -t $session
     exit 0
 fi
 
