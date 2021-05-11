@@ -34,14 +34,14 @@ wallpapers = {
     },
     "remote": {
         "unsplash": {
-            "default": "https://source.unsplash.com/1920x1080/?nature",
+            "default": "https://source.unsplash.com/1920x1080/?scifi",
             "daily": "https://source.unsplash.com/daily",
             "random": "https://source.unsplash.com/random/1920x1080"
         }
     }
 }
 home_path = Path.home()
-default_path = wallpapers["local"]["wallhaven"]["cyber"]
+default_path = wallpapers["local"]["wallhaven"]["landscape"]
 
 
 # Instantiate argument parser
@@ -69,6 +69,7 @@ def get_random_image_path(path: str) -> str:
 
 # Set color scheme and set as wallpaper
 def set_as_wallpaper(path: str) -> None:
+    os.system("notify-send 'Changing wallpaper...'")
     spinner = Halo(text='Setting wallpaper') if use_halo else None
     spinner.start() if spinner else None
 
@@ -76,6 +77,7 @@ def set_as_wallpaper(path: str) -> None:
     os.system(f'feh --bg-fill {path}')
 
     spinner.succeed() if spinner else None
+    os.system("killall notify-osd")
 
 
 def main():
