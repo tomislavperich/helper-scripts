@@ -1,15 +1,15 @@
 #!/bin/bash
 
-## Turn the screen on
+# Turn the screen on
 xset dpms force on
 
-## Unlock the computer
+# Unlock the computer
 loginctl unlock-session
 
-## Start the VPN
+# Start the VPN
 kitty ~/scripts/tmux/vpn.sh &
 
-## Start the development environment in a new terminal
+# Start the development environment in a new terminal
 kitty ~/scripts/tmux/mobile.sh & disown
 
 # Start chat apps
@@ -22,7 +22,7 @@ amixer sset Master 70 > /dev/null
 
 NUM_TRIES=0
 play_music () {
-    if $NUM_TRIES > 5; then
+    if $NUM_TRIES -gt 5; then
         exit 1
     fi
 
@@ -34,8 +34,8 @@ play_music () {
     sleep 6
 
     if spt list -d | grep -q 'legion'; then
-        spt play --name "metallica enter sandman" --device "legion" --track
-        spt playback -v 70
+        spt play --name "enter sandman" --device "legion" --track
+        spt playback -v 30
     else
         play_music
     fi
