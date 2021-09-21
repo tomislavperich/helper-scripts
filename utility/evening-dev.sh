@@ -1,7 +1,7 @@
 #!/bin/bash
 
-. $HOME/scripts/.env
+. "$HOME/scripts/.env"
 tmux kill-session -t vpn
-tmux kill-session -t mobile
-echo $USER_PASS | sudo -S killall slack zoom openvpn spotify
+tmux kill-session -t main
+echo "$USER_PASS" | sudo -S killall slack zoom openvpn
 pkill -9 viber

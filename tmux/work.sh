@@ -1,8 +1,8 @@
 #!/bin/sh
 
 # Session config
-session="mobile"
-path="$HOME/code/mobile/activecollab-mobile"
+session="main"
+path="$HOME/code/stackpath"
 
 # Check if tmux session already exists
 session_exists=$(tmux ls 2>&1 | grep $session)
@@ -18,14 +18,10 @@ tmux new -d -s $session -c $path
 tmux rename-window -t 1 "main"
 
 # Start npm
-tmux send-keys -t "main" "npm run start" C-m
+tmux send-keys -t "main" "~/scripts/utility/vpn_login.sh" C-m
 
 # Start android
-tmux split-window -h -c $path
-tmux select-pane -t "$session:main.2"
-# tmux send-keys 'emulator -noaudio -avd $(emulator -list-avds) > /dev/null & disown' C-m
-sleep 3
-
-tmux send-keys 'adb devices; npm run android; scrcpy > /dev/null & disown' C-m
+tmux new-window -t "main:2"
+sleep 2
 
 tmux -2 attach-session -t $session

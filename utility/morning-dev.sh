@@ -6,11 +6,8 @@ xset dpms force on
 # Unlock the computer
 loginctl unlock-session
 
-# Start the VPN
-kitty ~/scripts/tmux/vpn.sh &
-
 # Start the development environment in a new terminal
-kitty ~/scripts/tmux/mobile.sh & disown
+kitty --hold ~/scripts/tmux/work.sh & disown
 
 # Start chat apps
 pgrep slack > /dev/null || slack > /dev/null & disown
@@ -22,7 +19,7 @@ amixer sset Master 70 > /dev/null
 
 NUM_TRIES=0
 play_music () {
-    if $NUM_TRIES -gt 5; then
+    if [ $NUM_TRIES -gt 5 ]; then
         exit 1
     fi
 
@@ -34,9 +31,11 @@ play_music () {
     sleep 6
 
     if spt list -d | grep -q 'legion'; then
-        spt play --name "enter sandman" --device "legion" --track
         spt playback -v 30
+        spt play --name "enter sandman" --device "legion" --track
+        exit 0
     else
+        exit 1
         play_music
     fi
 }
