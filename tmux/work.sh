@@ -8,6 +8,7 @@ path="$HOME/code/stackpath"
 session_exists=$(tmux ls 2>&1 | grep $session)
 if [ "$session_exists" != "" ]; then
     tmux a -t $session
+    pgrep openconnect || startvpn
     exit 0
 fi
 
