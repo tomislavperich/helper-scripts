@@ -40,4 +40,4 @@ play_music () {
     fi
 }
 
-play_music
+# play_music
